@@ -13,7 +13,9 @@ public class PlayerCollision : MonoBehaviour
     {
         if (other.CompareTag("Fish"))
         {
-            print(other.gameObject.name);
+            Transform trm = PoolManager.Instance.Pop("HitParticle").GetComponent<Transform>();
+            trm.position = other.transform.position;
+            
             Fish fish = other.GetComponent<Fish>();
             if ((int)_playerController.ScaleType > (int)fish.DieScaleType)
             {
