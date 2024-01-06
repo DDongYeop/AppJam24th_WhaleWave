@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
         set
         {
             _hp = value;
+            _hp = Mathf.Clamp(_hp, 0, MaxHP);
             if (_hp <= 0)
                 print("GameOver");
             _hpSlider.value = Hp / MaxHP;
