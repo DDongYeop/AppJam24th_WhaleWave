@@ -57,16 +57,16 @@ public class PlayerController : MonoBehaviour
         if (_scaleType == PlayerScaleType.NORMAL)
         {
             if (_playerMovement.CurrentTrack >= 4)
-                _playerMovement.Movement(Vector3.left + transform.position, 3);
+                _playerMovement.Movement(new Vector3(-1, 1, 0) + transform.position, 3);
             else
-                _playerMovement.Movement(Vector3.right + transform.position);
+                _playerMovement.Movement(new Vector3(1, 1, 0) + transform.position);
         }
         else
         {
             if (_playerMovement.CurrentTrack >= 3)
-                _playerMovement.Movement(Vector3.left + transform.position, 2);
+                _playerMovement.Movement(new Vector3(-1, 1, 0) + transform.position, 2);
             else
-                _playerMovement.Movement(Vector3.right + transform.position);
+                _playerMovement.Movement(new Vector3(1, 1, 0) + transform.position);
         }
         StartCoroutine(ScaleCo(transform.localScale + Vector3.one));
     }

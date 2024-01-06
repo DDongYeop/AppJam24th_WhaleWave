@@ -1,14 +1,23 @@
+using System;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Fish : PoolableMono
 { 
-    public PlayerScaleType DieScaleType;  //어떤 친구까지 괜찮은지 
+    public PlayerScaleType DieScaleType;  //어떤 친구까지 괜찮은지
+    [SerializeField] private float _duration;
     public int Score;
     public int Damage;
     
     public float MoveSpeed;
     [HideInInspector] public float CurrentMoveSpeed;
+    private MeshRenderer _meshRenderer;
+    private readonly int _hashDissolved = Shader.PropertyToID("_Dissolved");
+
+    private void Awake()
+    {
+        _meshRenderer = transform.Find("Visual").GetComponent<MeshRenderer>();
+    }
 
     public override void Init()
     {
@@ -16,6 +25,7 @@ public class Fish : PoolableMono
             CurrentMoveSpeed = MoveSpeed * 1.5f;
         else
             CurrentMoveSpeed = MoveSpeed;
+        _meshRenderer.material.SetFloat(_hashDissolved, -1);
     }
     
     private void Update()
@@ -26,4 +36,23 @@ public class Fish : PoolableMono
             PoolManager.Instance.Push(this);
     }
 
+    public void Dissolve()
+    {
+        StartCoroutine(DissolveCo());
+    }
+
+    private IEnumerator DissolveCo()
+    {
+        float currentTime = 0;
+
+        while (currentTime < _duration)
+        {
+            yield return null;
+            CurrentMoveSpeed = 0;
+            currentTime += Time.deltaTime;
+            float time = currentTime / _duration;
+            _meshRenderer.material.SetFloat(_hashDissolved, Mathf.Lerp(-1, .5f, time));
+        }
+        PoolManager.Instance.Push(this);
+    }
 }

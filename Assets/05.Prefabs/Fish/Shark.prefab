@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8566c249e166f0344877f9a1e7bd81fa, type: 2}
+  - {fileID: 2100000, guid: 7ddcf6aa9e5253340bf5d4583d029703, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DieScaleType: 3
+  _duration: 0.5
   Score: 30
   Damage: 1
   MoveSpeed: 5
