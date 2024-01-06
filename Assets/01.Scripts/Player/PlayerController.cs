@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
             _hp = value;
             if (_hp <= 0)
                 print("GameOver");
+            _hpSlider.value = (float)Hp / (float)MaxHP;
         }
     }
     
@@ -36,6 +38,9 @@ public class PlayerController : MonoBehaviour
             _scoreUI.UpdateScore(_score);
         }
     }
+
+    [Header("UI")] 
+    private Slider _hpSlider;
     
     [Header("Other")] 
     private PlayerMovement _playerMovement;
@@ -46,6 +51,7 @@ public class PlayerController : MonoBehaviour
         _playerMovement = GetComponent<PlayerMovement>();
         _scaleType = PlayerScaleType.LITTLE;
         _scoreUI = FindObjectOfType<Score>();
+        _hpSlider = GameObject.Find("HPSlider").GetComponent<Slider>();
         Hp = MaxHP;
     }
 
