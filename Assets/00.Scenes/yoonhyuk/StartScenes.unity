@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HELP
+  m_text: EXIT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 315f64f13514e8248b9b449c416539c0, type: 2}
   m_sharedMaterial: {fileID: -8655639453663767174, guid: 315f64f13514e8248b9b449c416539c0, type: 2}
@@ -541,7 +541,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 704863766}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 965967196}
+        m_TargetAssemblyTypeName: SceneMovement, Assembly-CSharp
+        m_MethodName: SceneMove
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &704863766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,6 +1004,7 @@ GameObject:
   - component: {fileID: 965967191}
   - component: {fileID: 965967190}
   - component: {fileID: 965967195}
+  - component: {fileID: 965967196}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1093,6 +1106,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965967189}
   m_CullTransparentMesh: 1
+--- !u!114 &965967196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965967189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162d4562372cecb43a8dd6e7327b5931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1058519196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1200,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1058519199}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 965967196}
+        m_TargetAssemblyTypeName: SceneMovement, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1058519199
 MonoBehaviour:
   m_ObjectHideFlags: 0

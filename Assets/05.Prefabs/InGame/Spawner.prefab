@@ -82,8 +82,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waitTime: {x: 0.25, y: 0.75}
   _spawnObjStr:
-  - Plankton
+  - Fish
   - Shark
+  - Shrimp
+  - Seaweed
 --- !u!1 &1616930611554992366
 GameObject:
   m_ObjectHideFlags: 0

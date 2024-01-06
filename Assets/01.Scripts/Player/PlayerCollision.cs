@@ -19,12 +19,14 @@ public class PlayerCollision : MonoBehaviour
             {
                 _playerController.Hp -= fish.Damage;
                 PoolManager.Instance.Push(other.GetComponent<PoolableMono>());
+                SoundManager.Instance.PlaySound("whale_hit");
             }
             else
             {
                 _playerController.Hp += fish.Heal;
                 _playerController.Score += fish.Score;
                 PoolManager.Instance.Push(other.GetComponent<PoolableMono>());
+                SoundManager.Instance.PlaySound("whale_eat_2");
             }
         }
     }

@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8ad9a801d877a45b07b05736339d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DieScaleType: 2
+  DieScaleType: 4
   _duration: 0.5
   Score: 30
   Heal: 8
