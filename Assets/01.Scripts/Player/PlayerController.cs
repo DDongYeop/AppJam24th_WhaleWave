@@ -20,17 +20,19 @@ public class PlayerController : MonoBehaviour
         set
         {
             _score = value;
-            //UI반영 
+            _scoreUI.UpdateScore(_score);
         }
     }
     
     [Header("Other")] 
     private PlayerMovement _playerMovement;
+    private Score _scoreUI;
     
     private void Awake()
     {
         _playerMovement = GetComponent<PlayerMovement>();
         _scaleType = PlayerScaleType.LITTLE;
+        _scoreUI = FindObjectOfType<Score>();
     }
 
     [ContextMenu("Scale Up")]

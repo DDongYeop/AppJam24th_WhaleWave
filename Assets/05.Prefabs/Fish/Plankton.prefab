@@ -150,6 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8ad9a801d877a45b07b05736339d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DieScaleType: 3
-  Score: 2
+  DieScaleType: 5
+  Score: 20
   _moveSpeed: 5

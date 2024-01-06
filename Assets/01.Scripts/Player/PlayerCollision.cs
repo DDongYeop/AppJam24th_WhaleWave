@@ -17,6 +17,7 @@ public class PlayerCollision : MonoBehaviour
             if ((int)_playerController.ScaleType > (int)fish.DieScaleType)
             {
                 print("GameOver");
+                Time.timeScale = 0;
                 return;
             }
             _playerController.Score += fish.Score;

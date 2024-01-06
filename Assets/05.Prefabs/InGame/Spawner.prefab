@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dcbf86f874672841bd3fd36dba3a3e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waitTime: {x: 0.5, y: 0.75}
+  _waitTime: {x: 0.25, y: 0.75}
   _spawnObjStr:
   - Plankton
   - Shark
