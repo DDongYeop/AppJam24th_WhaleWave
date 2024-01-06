@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4404279228199063811}
   m_Layer: 0
   m_Name: Shrimp
-  m_TagString: Finish
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8ad9a801d877a45b07b05736339d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DieScaleType: 5
+  DieScaleType: 2
   _duration: 0.5
   Score: 20
   Heal: 5

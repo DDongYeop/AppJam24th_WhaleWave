@@ -11,8 +11,9 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Finish"))
+        if (other.CompareTag("Fish"))
         {
+            print(other.gameObject.name);
             Fish fish = other.GetComponent<Fish>();
             if ((int)_playerController.ScaleType > (int)fish.DieScaleType)
             {

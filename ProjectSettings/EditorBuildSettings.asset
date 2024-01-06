@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/00.Scenes/yoonhyuk/PlayScenes(score denote).unity
+    guid: 718a8019fe3b73b47abac928c5fa3911
+  - enabled: 1
+    path: Assets/00.Scenes/Dongyeop.unity
+    guid: 1d8d2f19ddbe7dc408ad96c3dded215f
+  - enabled: 1
+    path: Assets/00.Scenes/GameOver.unity
+    guid: 18b88381b2bfc8b469fe36d034b665c1
   m_configObjects: {}

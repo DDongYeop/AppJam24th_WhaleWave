@@ -21,3 +21,5 @@ MonoBehaviour:
     Count: 10
   - Prefab: {fileID: 2429932404687350421, guid: 1d93e66153a27be43bc125daf4512182, type: 3}
     Count: 11
+  - Prefab: {fileID: 4167899204298179712, guid: fc8c69506621faf419e4b216dd3a21eb, type: 3}
+    Count: 11

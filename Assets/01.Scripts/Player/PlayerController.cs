@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour
             _hp = value;
             _hp = Mathf.Clamp(_hp, 0, MaxHP);
             if (_hp <= 0)
-                print("GameOver");
+                SceneManager.LoadScene(2);
             _hpSlider.value = Hp / MaxHP;
         }
     }
@@ -39,6 +40,9 @@ public class PlayerController : MonoBehaviour
             _score = value;
             _scoreUI.UpdateScore(_score);
             Biggest();
+
+            if (_score >= PlayerPrefs.GetInt("Score"))
+                PlayerPrefs.SetInt("Score", _score);
         }
     }
 
@@ -56,11 +60,19 @@ public class PlayerController : MonoBehaviour
         _scoreUI = FindObjectOfType<Score>();
         _hpSlider = GameObject.Find("HPSlider").GetComponent<Slider>();
         Hp = MaxHP;
+        
+        if (PlayerPrefs.HasKey("Score"))
+            PlayerPrefs.SetInt("Score", 0);
     }
 
     private void Update()
     {
         Hp -= _score * Time.deltaTime * 0.005f;
+    }
+
+    private void OnDisable()
+    {
+        PlayerPrefs.SetInt("CurrentScore", _score);
     }
 
     [ContextMenu("Scale Up")]

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4167899204298179712}
   m_Layer: 0
   m_Name: Fish
-  m_TagString: Finish
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8ad9a801d877a45b07b05736339d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DieScaleType: 4
+  DieScaleType: 2
   _duration: 0.5
   Score: 30
   Heal: 8
@@ -133,8 +133,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: edf0c2a81b8b2cb4bb588a137a8f74ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7707230446898869661}
   m_SourcePrefab: {fileID: 100100000, guid: edf0c2a81b8b2cb4bb588a137a8f74ff, type: 3}
+--- !u!1 &7337698966407178187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: edf0c2a81b8b2cb4bb588a137a8f74ff, type: 3}
+  m_PrefabInstance: {fileID: 7572195313339751066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7707230446898869661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7337698966407178187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b929ecc0985779b4c957093694cb1ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 0.5
+  _rotationEach: 20
 --- !u!4 &7971211884747767153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: edf0c2a81b8b2cb4bb588a137a8f74ff, type: 3}
