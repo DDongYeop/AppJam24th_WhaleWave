@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/00.Scenes/yoonhyuk/PlayScenes(score denote).unity
-    guid: 718a8019fe3b73b47abac928c5fa3911
+    path: Assets/00.Scenes/yoonhyuk/StartScenes.unity
+    guid: 432884a442c06784e9798f91f66c793b
   - enabled: 1
     path: Assets/00.Scenes/Dongyeop.unity
     guid: 1d8d2f19ddbe7dc408ad96c3dded215f
