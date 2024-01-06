@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,9 +14,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _scaleDuration; //스케일 조절 되는거 시간 
 
     [Header("hp")] 
-    public int MaxHP;
-    private int _hp;
-    public int Hp
+    public float MaxHP;
+    private float _hp;
+    public float Hp
     {
         get => _hp;
         set
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
             _hp = value;
             if (_hp <= 0)
                 print("GameOver");
-            _hpSlider.value = (float)Hp / (float)MaxHP;
+            _hpSlider.value = Hp / MaxHP;
         }
     }
     
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
         {
             _score = value;
             _scoreUI.UpdateScore(_score);
+            Biggest();
         }
     }
 
@@ -53,6 +55,11 @@ public class PlayerController : MonoBehaviour
         _scoreUI = FindObjectOfType<Score>();
         _hpSlider = GameObject.Find("HPSlider").GetComponent<Slider>();
         Hp = MaxHP;
+    }
+
+    private void Update()
+    {
+        Hp -= _score * Time.deltaTime * 0.005f;
     }
 
     [ContextMenu("Scale Up")]
@@ -90,5 +97,13 @@ public class PlayerController : MonoBehaviour
             transform.localScale = Vector3.Lerp(startScale, endScale, time);
         }
         transform.localScale = endScale; 
+    }
+
+    private void Biggest()
+    {
+        if (_score >= 500 && _scaleType == PlayerScaleType.LITTLE)
+            ScaleUp();
+        if  (_score >= 1500 && _scaleType == PlayerScaleType.NORMAL)
+            ScaleUp(); 
     }
 }

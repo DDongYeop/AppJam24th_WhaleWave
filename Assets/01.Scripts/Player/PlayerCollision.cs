@@ -21,6 +21,7 @@ public class PlayerCollision : MonoBehaviour
             }
             else
             {
+                _playerController.Hp += fish.Heal;
                 _playerController.Score += fish.Score;
                 PoolManager.Instance.Push(other.GetComponent<PoolableMono>());
             }

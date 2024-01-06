@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,6 +6,7 @@ public class Fish : PoolableMono
     public PlayerScaleType DieScaleType;  //어떤 친구까지 괜찮은지
     [SerializeField] private float _duration;
     public int Score;
+    public int Heal;
     public int Damage;
     
     public float MoveSpeed;
@@ -25,7 +25,6 @@ public class Fish : PoolableMono
             CurrentMoveSpeed = MoveSpeed * 1.5f;
         else
             CurrentMoveSpeed = MoveSpeed;
-        _meshRenderer.material.SetFloat(_hashDissolved, -1);
     }
     
     private void Update()
