@@ -7,6 +7,7 @@ public class InputReader : ScriptableObject, Controls.IPlayerActions
 {
     public Action UpEvent;
     public Action DownEvent;
+    public Action SkillEvent;
     
     private Controls _controls;
 
@@ -27,5 +28,11 @@ public class InputReader : ScriptableObject, Controls.IPlayerActions
             UpEvent?.Invoke();
         if (context.ReadValue<Vector2>() == Vector2.down)
             DownEvent?.Invoke();
+    }
+
+    public void OnSkill(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            SkillEvent?.Invoke();
     }
 }

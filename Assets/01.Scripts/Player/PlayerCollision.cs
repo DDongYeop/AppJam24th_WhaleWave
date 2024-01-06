@@ -16,12 +16,14 @@ public class PlayerCollision : MonoBehaviour
             Fish fish = other.GetComponent<Fish>();
             if ((int)_playerController.ScaleType > (int)fish.DieScaleType)
             {
-                print("GameOver");
-                Time.timeScale = 0;
-                return;
+                _playerController.Hp -= fish.Damage;
+                PoolManager.Instance.Push(other.GetComponent<PoolableMono>());
             }
-            _playerController.Score += fish.Score;
-            PoolManager.Instance.Push(other.GetComponent<PoolableMono>());
+            else
+            {
+                _playerController.Score += fish.Score;
+                PoolManager.Instance.Push(other.GetComponent<PoolableMono>());
+            }
         }
     }
 }

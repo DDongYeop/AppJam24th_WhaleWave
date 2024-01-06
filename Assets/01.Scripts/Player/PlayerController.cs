@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -12,6 +11,20 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float _scaleDuration; //스케일 조절 되는거 시간 
 
+    [Header("hp")] 
+    public int MaxHP;
+    private int _hp;
+    public int Hp
+    {
+        get => _hp;
+        set
+        {
+            _hp = value;
+            if (_hp <= 0)
+                print("GameOver");
+        }
+    }
+    
     [Header("Score")]
     private int _score;
     public int Score
@@ -33,6 +46,7 @@ public class PlayerController : MonoBehaviour
         _playerMovement = GetComponent<PlayerMovement>();
         _scaleType = PlayerScaleType.LITTLE;
         _scoreUI = FindObjectOfType<Score>();
+        Hp = MaxHP;
     }
 
     [ContextMenu("Scale Up")]

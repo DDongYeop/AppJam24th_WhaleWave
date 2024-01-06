@@ -19,6 +19,10 @@ public class ObjectSpawner : MonoBehaviour
         {
             float waitTime = Random.Range(_waitTime.x, _waitTime.y);
             yield return new WaitForSeconds(waitTime);
+            
+            if (SkillManager.Instance.IsStop)
+                continue;
+            
             int spawnPoint = Random.Range(1, _spawnPoint.Length);
             int objIndex = Random.Range(0, _spawnObjStr.Length);
             Transform fish = PoolManager.Instance.Pop(_spawnObjStr[objIndex]).GetComponent<Transform>();
